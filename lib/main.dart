@@ -1,4 +1,5 @@
-import 'package:curso_task/home_Page.dart';
+import 'package:curso_task/Screens/home_Page.dart';
+import 'package:curso_task/Theme/my_themes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Curso_Task ',
+      themeMode: ThemeMode.system,
+      theme: MyThemes.lightTheme,
+      darkTheme: MyThemes.darkTheme,
+
       home: const HomePage(),
     );
   }
