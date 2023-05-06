@@ -36,7 +36,7 @@ class _SubTopicState extends State<SubTopic> {
                   Padding(
                     padding: const EdgeInsets.only(left: 12),
                     child: IconButton(
-                        onPressed: () {},
+                        onPressed: () {Navigator.pop(context);},
                         icon: const Icon(
                           Icons.arrow_back_ios,
                           color: Colors.white54,
@@ -80,7 +80,7 @@ class _SubTopicState extends State<SubTopic> {
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.38,
                 width: MediaQuery.of(context).size.width,
-                child: listbiew()),
+                child: const listbiew()),
             const Padding(
               padding: EdgeInsets.only(left: 12),
               child: Text(
@@ -88,7 +88,7 @@ class _SubTopicState extends State<SubTopic> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
             ),
-            AllCourses(),
+            const AllCourses(),
           ],
         ),
       ),

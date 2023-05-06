@@ -1,4 +1,6 @@
+import 'package:curso_task/Screens/Topic_Page.dart';
 import 'package:curso_task/Screens/home_Page.dart';
+import 'package:curso_task/Screens/sub_Topic_Page.dart';
 import 'package:curso_task/Theme/my_themes.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +22,10 @@ class MyApp extends StatelessWidget {
       darkTheme: MyThemes.darkTheme,
 
       home: const HomePage(),
+      routes: {
+        'subTopics':(BuildContext ctx)=>SubTopic(),
+        'topicPage':(BuildContext ctx)=>TopicPage(),
+      },
     );
   }
 }

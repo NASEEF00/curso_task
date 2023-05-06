@@ -23,14 +23,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
   List pages = [
-    ExplorePage(),
-   TopicPage(),
-    SubTopic(),
-    listbiew(),
+    const ExplorePage(),
 
-    // const Icon(Icons.search, size:200),
-    // const Icon(Icons.computer, size:200),
-    // const Icon(Icons.download, size:200),
+    const Icon(Icons.book, size:200),
+    const Icon(Icons.bookmark, size:200),
+    const Icon(Icons.person, size:200),
 
   ];
   @override
@@ -42,10 +39,10 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomNavigationBar(
         type:BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home,),label: 'Explore',),
-          BottomNavigationBarItem(icon: Icon(Icons.search),label: 'My Course'),
-          BottomNavigationBarItem(icon: Icon(Icons.screenshot_monitor_sharp),label: 'Wishlist'),
-          BottomNavigationBarItem(icon: Icon(Icons.download),label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.explore,),label: 'Explore',),
+          BottomNavigationBarItem(icon: Icon(Icons.book),label: 'My Course'),
+          BottomNavigationBarItem(icon: Icon(Icons.bookmark),label: 'Wishlist'),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile'),
         ],
         selectedIconTheme:  const IconThemeData(
           color: Colors.indigo),

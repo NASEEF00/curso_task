@@ -75,7 +75,7 @@ class _AllCoursesState extends State<AllCourses> {
 
                         ),
                       ],),
-                      Divider(
+                      const Divider(
                         thickness: 2,
                       ),
                     ],

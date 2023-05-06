@@ -1,10 +1,9 @@
+import 'package:curso_task/Screens/sub_Topic_Page.dart';
 import 'package:curso_task/Widgets/all_Courses.dart';
-import 'package:curso_task/Widgets/all_Topics.dart';
-import 'package:curso_task/Widgets/instructors_Listview.dart';
 import 'package:curso_task/Widgets/text_Btn.dart';
 import 'package:flutter/material.dart';
 
-import '../Constants/lists.dart';
+
 
 class TopicPage extends StatefulWidget {
   const TopicPage({Key? key}) : super(key: key);
@@ -22,7 +21,13 @@ class _TopicPageState extends State<TopicPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              Container( decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.center,
+                  colors: [Colors.grey.shade800, Colors.grey.shade100],
+                ),
+              ),
                 height: MediaQuery.of(context).size.height * 0.3,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -76,9 +81,9 @@ class _TopicPageState extends State<TopicPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  txtBtn("UX Design"),
-                  txtBtn("Illustration"),
-                  txtBtn("Blender")
+                  txtBtn( title: 'UX Design'),
+                  txtBtn(title: "Illustration"),
+                  txtBtn(title: "Blender")
                 ],
               ),
               const SizedBox(
@@ -87,9 +92,9 @@ class _TopicPageState extends State<TopicPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  txtBtn("Drawing"),
-                  txtBtn("After Effects"),
-                  txtBtn("User Research")
+                  txtBtn(title: "Drawing"),
+                  txtBtn(title:"After Effects"),
+                  txtBtn(title: "User Research"),
                 ],
               ),
               const SizedBox(
@@ -98,9 +103,9 @@ class _TopicPageState extends State<TopicPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  txtBtn("Branding & Identity"),
-                  txtBtn("UI Design"),
-                  txtBtn("3D")
+                  txtBtn(title: "Branding & Identity"),
+                  txtBtn(title:"UI Design"),
+                  txtBtn(title: "3D",)
                 ],
               ),
               SizedBox(height: 25),

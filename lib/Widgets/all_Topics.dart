@@ -42,7 +42,7 @@ class _AllTopicsState extends State<AllTopics> {
                     color: Colors.grey.shade600,
                     fontSize: MediaQuery.of(context).textScaleFactor * 12),
               ),
-              trailing: IconButton(onPressed: () { }, icon:Icon(Icons.keyboard_arrow_right),),
+              trailing: IconButton(onPressed: () { Navigator.of(context).pushNamed('topicPage') ;}, icon:Icon(Icons.keyboard_arrow_right),),
             );
           },
           itemCount: allTopics.length,
