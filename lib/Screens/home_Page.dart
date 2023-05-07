@@ -1,11 +1,7 @@
-import 'package:curso_task/Screens/Topic_Page.dart';
+
 import 'package:curso_task/Screens/explore_Page.dart';
-import 'package:curso_task/Screens/sub_Topic_Page.dart';
-import 'package:curso_task/Widgets/all_Courses.dart';
-import 'package:curso_task/Widgets/all_Topics.dart';
-import 'package:curso_task/Widgets/listView_video.dart';
-import 'package:curso_task/Widgets/topics_Gridview_Widget.dart';
-import 'package:curso_task/Widgets/video_List_view.dart';
+import 'package:curso_task/Weather/weather_Page.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   List pages = [
     const ExplorePage(),
 
-    const Icon(Icons.book, size:200),
+   WeatherHome(),
     const Icon(Icons.bookmark, size:200),
     const Icon(Icons.person, size:200),
 

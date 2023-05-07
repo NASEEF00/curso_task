@@ -2,10 +2,17 @@ import 'package:curso_task/Screens/Topic_Page.dart';
 import 'package:curso_task/Screens/home_Page.dart';
 import 'package:curso_task/Screens/sub_Topic_Page.dart';
 import 'package:curso_task/Theme/my_themes.dart';
+import 'package:curso_task/Weather/weather_Page_Provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => Weather_Page_Provider(),
+      child:MyApp() ,
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
