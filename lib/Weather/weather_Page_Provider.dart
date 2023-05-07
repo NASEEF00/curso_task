@@ -61,7 +61,7 @@ class Weather_Page_Provider extends ChangeNotifier{
         cover = 0;
         cityname = 'Not available';
       } else {
-        temp = decodedData['main']['temp'] - 273;
+        temp = decodedData['main']['temp'];
         press = decodedData['main']['pressure'];
         hum = decodedData['main']['humidity'];
         cover = decodedData['clouds']['all'];
