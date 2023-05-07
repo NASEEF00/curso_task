@@ -8,10 +8,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => Weather_Page_Provider(),
-      child:MyApp() ,
-    ),
+    const MyApp(),
   );
 }
 
@@ -21,18 +18,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Curso_Task ',
-      themeMode: ThemeMode.system,
-      theme: MyThemes.lightTheme,
-      darkTheme: MyThemes.darkTheme,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Weather_Page_Provider()),
+    ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Curso_Task ',
+        themeMode: ThemeMode.system,
+        theme: MyThemes.lightTheme,
+        darkTheme: MyThemes.darkTheme,
 
-      home: const HomePage(),
-      routes: {
-        'subTopics':(BuildContext ctx)=>SubTopic(),
-        'topicPage':(BuildContext ctx)=>TopicPage(),
-      },
+        home: const HomePage(),
+        routes: {
+          'subTopics':(BuildContext ctx)=>SubTopic(),
+          'topicPage':(BuildContext ctx)=>TopicPage(),
+        },
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 
 import 'package:curso_task/Screens/explore_Page.dart';
+import 'package:curso_task/Weather/Widgets.dart';
 import 'package:curso_task/Weather/weather_Page.dart';
 
 import 'package:flutter/material.dart';
@@ -20,8 +21,7 @@ class _HomePageState extends State<HomePage> {
   }
   List pages = [
     const ExplorePage(),
-
-   WeatherHome(),
+   const WeatherHome(),
     const Icon(Icons.bookmark, size:200),
     const Icon(Icons.person, size:200),
 
@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
         type:BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.explore,),label: 'Explore',),
-          BottomNavigationBarItem(icon: Icon(Icons.book),label: 'My Course'),
+          BottomNavigationBarItem(icon: Icon(Icons.sunny_snowing),label: 'Weather'),
           BottomNavigationBarItem(icon: Icon(Icons.bookmark),label: 'Wishlist'),
           BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile'),
         ],

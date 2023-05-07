@@ -9,10 +9,10 @@ class Weather_Page_Provider extends ChangeNotifier{
 
   bool isLoaded = false;
   num temp = 20;
-  num press  = 1000 ;
-  num hum = 50;
-  num cover = 50;
   String cityname = '';
+  String weathericon ='';
+  String desc = '';
+
 
 
 
@@ -32,6 +32,7 @@ class Weather_Page_Provider extends ChangeNotifier{
         isLoaded = true;
       notifyListeners();
 
+
     } else {
       print(response.statusCode);
     }
@@ -44,7 +45,7 @@ class Weather_Page_Provider extends ChangeNotifier{
       forceAndroidLocationManager: true,
     );
     if (p != null) {
-      print('Lat:${p?.latitude}, Long:${p?.longitude}');
+      print('Lat:${p.latitude}, Long:${p.longitude}');
       getCurrentCityWeather(p);
     } else {
       print('Data unavailable');
@@ -55,19 +56,18 @@ class Weather_Page_Provider extends ChangeNotifier{
   updateUI(var decodedData) {
 
       if (decodedData == null) {
-        temp = 0;
-        press = 0;
-        hum = 0;
-        cover = 0;
-        cityname = 'Not available';
+        temp =0 ;
+        cityname ='';
+        weathericon ='';
+        desc='';
+
       } else {
         temp = decodedData['main']['temp']-273;
-        press = decodedData['main']['pressure'];
-        hum = decodedData['main']['humidity'];
-        cover = decodedData['clouds']['all'];
         cityname = decodedData['name'];
+        weathericon = ("http://openweathermap.org/img/w/"+decodedData['weather'][0]['icon'] +".png") ;
+        desc = decodedData['weather'][0]['description'];
       }
-      notifyListeners();
+
 
   }
 
