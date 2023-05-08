@@ -8,13 +8,24 @@ class Weather_Page_Provider extends ChangeNotifier{
 
 
   bool isLoaded = false;
-  num temp = 20;
+  num temp =0 ;
   String cityname = '';
   String weathericon ='';
   String desc = '';
 
 
-
+  getCurrentLocation() async {
+    var p = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.low,
+      forceAndroidLocationManager: true,
+    );
+    if (p != null) {
+      print('Lat:${p?.latitude}, Long:${p?.longitude}');
+      getCurrentCityWeather(p);
+    } else {
+      print('Data unavailable');
+    }
+  }
 
 
   getCurrentCityWeather(Position position) async {
@@ -39,18 +50,7 @@ class Weather_Page_Provider extends ChangeNotifier{
   }
 
 
-  getCurrentLocation() async {
-    var p = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.low,
-      forceAndroidLocationManager: true,
-    );
-    if (p != null) {
-      print('Lat:${p.latitude}, Long:${p.longitude}');
-      getCurrentCityWeather(p);
-    } else {
-      print('Data unavailable');
-    }
-  }
+
 
 
   updateUI(var decodedData) {
