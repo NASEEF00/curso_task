@@ -7,6 +7,7 @@ import 'dart:convert';
 class Weather_Page_Provider extends ChangeNotifier{
 
 
+
   bool isLoaded = false;
   num temp =0 ;
   String cityname = '';
@@ -14,7 +15,8 @@ class Weather_Page_Provider extends ChangeNotifier{
   String desc = '';
 
 
-  getCurrentLocation() async {
+
+   getCurrentLocation() async {
     var p = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.low,
       forceAndroidLocationManager: true,
@@ -22,6 +24,7 @@ class Weather_Page_Provider extends ChangeNotifier{
     if (p != null) {
       print('Lat:${p?.latitude}, Long:${p?.longitude}');
       getCurrentCityWeather(p);
+      notifyListeners();
     } else {
       print('Data unavailable');
     }
@@ -39,6 +42,7 @@ class Weather_Page_Provider extends ChangeNotifier{
       var decodeData = json.decode(data);
       print(data);
       updateUI(decodeData);
+      notifyListeners();
 
         isLoaded = true;
       notifyListeners();
@@ -48,9 +52,6 @@ class Weather_Page_Provider extends ChangeNotifier{
       print(response.statusCode);
     }
   }
-
-
-
 
 
   updateUI(var decodedData) {
