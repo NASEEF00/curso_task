@@ -7,9 +7,16 @@ import 'package:intl/intl.dart';
 class WeatherHome extends StatelessWidget {
   const WeatherHome({Key? key}) : super(key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
+
+
+
     return Consumer<Weather_Page_Provider>(builder: (context, value, child) {
+
+
 
       value.getCurrentLocation();
 
