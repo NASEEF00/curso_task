@@ -11,14 +11,13 @@ class WeatherHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final provider = Provider.of<Weather_Page_Provider>(context, listen: false);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      provider.getCurrentLocation();
+    });
 
 
     return Consumer<Weather_Page_Provider>(builder: (context, value, child) {
-
-
-
-      value.getCurrentLocation();
 
       return SafeArea(
         child: Scaffold(
